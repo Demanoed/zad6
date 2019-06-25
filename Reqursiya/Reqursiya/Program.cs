@@ -9,6 +9,11 @@ namespace Reqursiya
 {
     class Program
     {
+        #region Первые числа последовательности и массив для их хранения
+        private static double a1, a2, a3;
+        private static double[] mas;
+        #endregion
+        #region Ищет число для дальнейшей обработки. Работает по принципу рекурсивного метода. Возвращает найденное число последовательности.
         private static double FindChislo(int N)
         {
             if (N == 1)
@@ -25,8 +30,8 @@ namespace Reqursiya
             }
             return 13 * FindChislo(N - 1) - 10 * FindChislo(N - 2) + FindChislo(N - 3);
         }
-        private static double a1, a2, a3;
-        private static double[] mas;
+        #endregion
+        #region Запрашивает у пользователя ввод данных последовательности и печатает результат обработки.
         static void Main()
         {
             ColorMess.Yellow("\n Задайте первое число последовательности а1: ");
@@ -64,5 +69,6 @@ namespace Reqursiya
                 ColorMess.Magenta("\n\n Последовательность (по элементам стоящим на четных местах) не является строго возрастающей.\n");
             Message.GoToBack();
         }
+        #endregion
     }
 }
